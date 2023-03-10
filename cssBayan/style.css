@@ -104,6 +104,11 @@
   animation: fadeOut ease 0.3s;
 }
 
+.label:active .img-container {
+  display: flex;
+  animation: fadeOut ease 0.5s;
+}
+
 .radio:checked + .label .img-container {
   display: flex;
   animation: none;
