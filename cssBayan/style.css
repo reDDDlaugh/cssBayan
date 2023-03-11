@@ -131,7 +131,7 @@
   }
 
   .section {
-    width: 30vw;
+    width: 40vw;
   }
 
   .h1 {
@@ -139,21 +139,13 @@
   }
 
   .img {
-    max-width: 30vw;
+    max-width: 40vw;
   }
 }
 
 @media screen and (min-width: 1920px) {
   * {
     font-size: 1.2rem;
-  }
-
-  .body {
-    overflow: scroll;
-  }
-
-  .label {
-    cursor: pointer;
   }
 
   .section {
@@ -171,6 +163,14 @@
 }
 
 @media (hover: hover) {
+  .body {
+    overflow: scroll;
+  }
+
+  .label {
+    cursor: pointer;
+  }
+
   .ico {
     display: none;
   }
