@@ -167,6 +167,12 @@
     display: none;
   }
 
+  .radio:checked + .label .minus {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
   .section:hover {
     color: black;
   }
@@ -179,10 +185,6 @@
   .label:hover .minus {
     display: inline;
     animation: fadeOut ease 0.3s;
-  }
-
-  .radio:checked + .label .minus {
-    display: none;
   }
 
   .section:hover .radio:checked + .label .minus {
