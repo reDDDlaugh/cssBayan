@@ -25,14 +25,14 @@
   display: flex;
   flex-direction: column;
   width: 80vw;
-  max-width: 100vw;
+  max-width: 90vw;
   justify-content: center;
   cursor: pointer;
 }
 
 .h1 {
   margin: 1em 0 0.1em;
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: black;
   cursor: default;
 }
@@ -127,22 +127,25 @@
 
 @media screen and (min-width: 820px) {
   * {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .section {
-    width: 70vw;
-    max-width: 100vw;
+    width: 30vw;
   }
 
   .h1 {
-    font-size: 1.4em;
+    font-size: 1.5em;
+  }
+
+  .img {
+    max-width: 30vw;
   }
 }
 
 @media screen and (min-width: 1920px) {
   * {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .body {
@@ -154,8 +157,7 @@
   }
 
   .section {
-    width: 50vw;
-    max-width: 100vw;
+    width: 30vw;
     color: blue;
   }
 
@@ -163,6 +165,12 @@
     font-size: 1.5em;
   }
 
+  .img {
+    max-width: 30vw;
+  }
+}
+
+@media (hover: hover) {
   .ico {
     display: none;
   }
@@ -170,9 +178,7 @@
   .radio:checked + .label .minus {
     display: none;
   }
-}
 
-@media (hover: hover) {
   .section:hover {
     color: black;
   }
