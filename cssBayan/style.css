@@ -1,0 +1,192 @@
+:root {
+  --background-color: #EAEAEA;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.html {
+  scroll-behavior: smooth;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  max-width: 90vw;
+  justify-content: center;
+}
+
+.h1 {
+  margin: 1em 0 0.1em;
+  font-size: 1.5em;
+}
+
+.hr {
+  margin: 0;
+}
+
+.radio {
+  height: 1em;
+  display: none;
+}
+
+.label {
+  font-size: 1.5em;
+  font-weight: bold;
+  display: block;
+  padding: 0.3em 0;
+}
+
+.line-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plus {
+  height: 1em;
+  display: inline;
+}
+
+
+.img-container {
+  display: none;
+  justify-content: center;
+}
+
+.img {
+  width: 50vw;
+  margin: 0.5em 0;
+}
+
+.radio:checked + .label {
+  color: black;
+}
+
+.label:active .plus {
+  fill: blue;
+  opacity: 0.7;
+}
+
+.radio:active + .label {
+  color: blue;
+  opacity: 0.7;
+}
+
+.radio:checked + .label .plus {
+  display: inline;
+  animation: rotateOn 0.2s;
+  transform: rotate(45deg);
+}
+
+.radio:checked + .label .img-container {
+  display: flex;
+  animation: none;
+}
+
+@keyframes rotateOn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity:0;
+    scale: 0.8;
+  }
+  100% {
+    opacity:1;
+    scale: 1;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  * {
+    font-size: 1.1rem;
+  }
+
+  .menu-container {
+    width: 40vw;
+  }
+
+  .img {
+    width: 25vw;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  * {
+    font-size: 1.2rem;
+  }
+
+  .menu-container {
+    width: 30vw;
+  }
+
+  .img {
+    width: 15vw;
+  }
+}
+
+@media (hover: none) {
+  .radio:checked + .label .img {
+    display: block;
+    animation: fadeOut 0.4s;
+  }
+}
+
+@media (hover: hover) {
+  .body {
+    overflow: scroll;
+  }
+
+  .label {
+    cursor: pointer;
+  }
+
+  .menu-container {
+    color: blue;
+  }
+
+  .menu-container:hover {
+    color: black;
+  }
+
+  .plus,
+  .radio:checked + .label .plus {
+    display: none;
+  }
+
+  .menu-container:hover .plus,
+  .menu-container:hover .radio:checked + .label .plus {
+    display: inline;
+    animation: fadeOut 0.2s;
+  }
+
+  .label:hover .plus {
+    display: inline;
+    animation: rotateOn 0.2s;
+    transform: rotate(45deg);
+  }
+
+  .label:hover .img-container {
+    display: flex;
+    animation: fadeOut 0.4s;
+  }
+}
