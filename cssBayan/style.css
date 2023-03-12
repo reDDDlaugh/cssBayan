@@ -17,7 +17,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
   margin: 0;
 }
 
@@ -32,15 +31,13 @@
 .h1 {
   margin: 1em 0 0.1em;
   font-size: 1.5em;
-  color: black;
 }
 
 .hr {
   margin: 0;
 }
 
-.radio,
-.ico {
+.radio {
   height: 1em;
   display: none;
 }
@@ -58,6 +55,7 @@
 }
 
 .plus {
+  height: 1em;
   display: inline;
 }
 
@@ -75,7 +73,7 @@
   color: black;
 }
 
-.label:active .ico {
+.label:active .plus {
   fill: blue;
   opacity: 0.7;
 }
@@ -86,12 +84,9 @@
 }
 
 .radio:checked + .label .plus {
-  display: none;
-}
-
-.radio:checked + .label .minus {
   display: inline;
-  animation: fadeOut ease 0.3s;
+  animation: rotateOn ease 0.2s;
+  transform: rotate(45deg);
 }
 
 .label:active .img-container {
@@ -102,6 +97,15 @@
 .radio:checked + .label .img-container {
   display: flex;
   animation: none;
+}
+
+@keyframes rotateOn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(135deg);
+  }
 }
 
 @keyframes fadeOut {
@@ -156,24 +160,25 @@
     color: blue;
   }
 
-  .ico,
-  .radio:checked + .label .minus {
-    display: none;
-  }
-
   .menu-container:hover {
     color: black;
   }
 
+  .plus,
+  .radio:checked + .label .plus {
+    display: none;
+  }
+
   .menu-container:hover .plus,
-  .label:hover .minus,
-  .menu-container:hover .radio:checked + .label .minus {
+  .menu-container:hover .radio:checked + .label .plus {
     display: inline;
-    animation: fadeOut ease 0.3s;
+    animation: fadeOut ease 0.2s;
   }
 
   .label:hover .plus {
-    display: none;
+    display: inline;
+    animation: rotateOn ease 0.2s;
+    transform: rotate(45deg);
   }
 
   .label:hover .img-container {
